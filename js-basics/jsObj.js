@@ -1,4 +1,5 @@
 let newThing = { a: 3, b: 1, c: 2 };
+console.log(Object.keys(newThing).length);
 let newArr = Object.entries(newThing).map(([x,y])=>{
     return [x,y] = [y,x]; 
 });
