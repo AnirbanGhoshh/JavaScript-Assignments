@@ -37,14 +37,34 @@
 */
 
 
+
 // Iterative Fibonacci function
 function fibonacci(n) {
   // Your code here
+  let iterFibo = [];
+  if(n==1){
+    iterFibo[0]=0;
+  }
+  else if(n==2){
+    iterFibo[0]=0;
+    iterFibo[1]=1;
+  }
+  else if(n > 2){
+    iterFibo[0]=0;
+    iterFibo[1]=1;
+    for(let i=2 ; i < n ; i++){
+      iterFibo[i] = iterFibo[i-1] + iterFibo[i-2];
+    }
+  }
+  return iterFibo;
 }
 
 // Recursive Fibonacci function
 function fibonacciRecursive(n) {
-  // Your code here
+  if(n==0) return 0;
+  if(n==1) return 1;
+  return fibonacciRecursive(n-1) + fibonacciRecursive(n-2);
+
 }
 
 module.exports = { fibonacci, fibonacciRecursive };
