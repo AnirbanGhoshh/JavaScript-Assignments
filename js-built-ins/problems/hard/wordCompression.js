@@ -22,8 +22,28 @@
 */
 
 
-function compressWords(arr) {
+function compressWords(newArr) {
   // Your code here
+  if (newArr.length === 0) return [];
+  let c=1;
+  let arr = [];
+  for(let i=1 ; i < newArr.length ; i++){
+    if(newArr[i] == newArr[i-1]){
+      c++;
+    }
+    else{
+      if(c != 1){
+        arr.push(`${newArr[i-1]}${c}`);
+      }
+      else{
+        arr.push(`${newArr[i-1]}`);
+      }
+      c=1;
+    }
+  }
+  if(c!=1) arr.push(`${newArr[newArr.length-1]}${c}`);
+  else arr.push(`${newArr[newArr.length-1]}`);
+  return arr;
 }
 
 
