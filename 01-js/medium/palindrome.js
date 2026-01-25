@@ -7,7 +7,16 @@
 */
 
 function isPalindrome(str) {
-    return true;
+    let arr=[];
+    for(let i=0 ; i < str.length ; i++){
+      let ch = str.charAt(i);
+      ch = ch.toLowerCase();
+      if(ch >= 'a' && ch <= 'z'){
+        arr.push(ch);
+      }
+    }
+
+    return arr === arr.reverse();
 }
 
 module.exports = isPalindrome;
